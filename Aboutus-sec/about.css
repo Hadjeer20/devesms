@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    background: #f4e9c9;
+    color:#561111;
+    font-family: serif;
+}
+.about{
+    padding: 60px  80px;
+    border-bottom:1px solid#b9a98a ;
+}
+.about-heading{
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    margin-bottom: 40px;
+}
+.about-heading .wand{ height: 100px;}
+.about-title{
+     font-family: 'Henny Penny', cursive;
+    font-size:56px;
+    color: #000000;
+    margin: 0;
+    line-height: 1;
+    
+}
+.title-wrap{
+    position: relative;
+    display: inline-block;}
+.underline{
+    position: absolute;
+    left: -30px;
+    bottom: -18px;
+width: 140%;
+height: auto;
+
+}
+.about-content{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 120px;
+}
+.about-text{
+    flex: 0 1 700px;
+   font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.6;
+    
+}
+.about-image{
+    flex: 0 0 auto;
+}
+.about-image img{
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+
+  .about {
+    padding: 40px 20px;
+  }
+
+  .about-heading .wand { height: 60px; }
+  .about-title { font-size: 36px; }
+
+  .about-content {
+    
+    flex-direction: column;   
+    gap: 30px;
+    align-items: flex-start;
+   
+  }
+
+  .about-text {
+    flex: 1 1 auto ;
+       font-size: 18px;       
+  }
+
+ 
+  .about-image {
+    align-self: center;
+  }
+  .about-image img {
+   width: 180px;
+  }
+}

@@ -1,0 +1,87 @@
+body{margin: 0;}
+.footer{
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    background: #5a070a;
+    color: #f5e9c8;
+    padding: 170px 60px 40px;
+    font-family: 'Instrument Serif', serif;
+}
+.footer-brand{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.footer-logo { height: 40px; }
+.footer-title {
+  margin: 0;
+  color: #F8D358;
+  font-family: 'Henny Penny', cursive;
+  font-size: 36px;
+}
+.footer-tagline {
+  color: #F8D358;
+  font-size: 22px;
+  margin: 10px 0;
+}
+.footer-line {
+  border: none;
+  border-top: 1px solid#c9832f;
+  margin: 16px 0 24px;
+}
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.club-logo { height: 70px; }
+.btn-register {
+    background: #f8d358;
+    color: #7a1212;
+    padding: 12px 50px;
+    border-radius: 20px;  
+    font-size: 28px;
+    text-decoration: none; 
+}
+.follow-title { margin: 30px 0 12px; font-size: 20px; }
+.socials { display: flex; gap: 12px; }
+.socials img { width: 32px; height: 32px; }
+.footer-col h3 {
+  font-family: 'Henny Penny', cursive;
+  font-size: 28px;
+  margin: 0 0 16px;
+  font-weight: normal;
+}
+.footer-col p { margin: 6px 0; font-size: 18px; }
+.footer-col a { color: inherit; text-decoration: none; font-size: 18px; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col li { margin: 6px 0; }
+.footer-envelope {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 110px;
+}
+.footer-wave {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130px; 
+  display: block;
+}
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr 1fr 1fr;   
+    gap: 24px 12px;
+    padding: 90px 16px 30px;
+  }
+
+  .footer-left { grid-column: 1 / -1; }
+
+  .footer-col h3 { font-size: 18px; }
+  .footer-col p,
+  .footer-col a { font-size: 13px; }
+}
