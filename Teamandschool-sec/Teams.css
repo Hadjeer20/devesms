@@ -1,0 +1,112 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: #F4E9C9;
+}
+
+.teams {
+    container-type: inline-size;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    aspect-ratio: 1440 / 1024;
+    font-family: "Henny Penny", cursive;
+}
+
+.stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #F4E9C9;
+    overflow: hidden;
+}
+
+.wound {
+    position: absolute;
+    left: 4.6%;
+    top: 2%;
+    width: 10%;
+    height: auto;
+}
+
+.title {
+    position: absolute;
+    left: 13%;
+    top: 3%;
+    margin: 0;
+    font-size: 4.45cqw; 
+    font-weight: 400;
+    line-height: 1.5;
+    color: #561111;
+    white-space: nowrap;
+}
+
+.title-underline {
+    position: absolute;
+    left: 9.2%;
+    top: 9.6%;
+    width: 39.5%;
+    height: 7.8%;
+    object-fit: fill;
+}
+
+.crest {
+    position: absolute;
+    width: 23%;
+    height: auto;
+}
+
+.hufflepuff { left: 1%;    top: 15.5%; }
+.slytherin  { left: 23.8%; top: 28.5%; }
+.ravenclaw  { left: 2.7%;  top: 50%; }
+.gryffindor { left: 25.2%; top: 60%; }
+
+.letter {
+    position: absolute;
+    left: 52%;
+    top: 16%;
+    width: 44%;
+    height: 84%;
+}
+
+.letter-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.letter-greeting,
+.letter-body,
+.letter-closing {
+    position: absolute;
+    margin: 10px 0 0 0;
+    font-weight: 400;
+    color: #000;
+}
+
+.letter-greeting {
+    left: 8%;
+    width: 87%;
+    top: 11%;
+    text-align: center;
+    font-size: 2.98cqw;
+    line-height: 1.35;
+}
+
+.letter-body {
+    left: 17%;
+    width: 69%;
+    top: 19.5%;
+    font-size: 1.79cqw;
+    line-height: 1.78;
+}
+
+.letter-closing {
+    left: 20.5%;
+    top: 79.5%;
+    font-size: 1.79cqw;
+    line-height: 1.78;
+}
