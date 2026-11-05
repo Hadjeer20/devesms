@@ -23,14 +23,14 @@
             </div>
 
             <nav class="nav-links">
-                <a href="home.html">Home</a>
-                <a href="About.html">About</a>
-                <a href="Teams.html">Teams & Schools</a>
-                <a href="Contact.html">Contact</a>
+                <a href="Header/Home.html">Home</a>
+                <a href="Aboutus-sec/About.html">About</a>
+                <a href="Teamandschool-sec/Teams.html">Teams & Schools</a>
+                <a href="Footer/Contact.html">Contact</a>
             </nav>
 
             <div class="register_button">
-                <button type="button">Register Now</button>
+                <button class="register-btn" onclick="openRegistration()"> Register Now</button>
             </div>
 
         </header>
@@ -46,6 +46,71 @@
         </div>
 
     </section>
+<div class="registration-overlay" id="registrationPopup">
 
+    <div class="registration-modal">
+
+        <button class="close-btn" onclick="closeRegistration()">
+            &times;
+        </button>
+
+        <div class="modal-logo"><img src="assets/logo.png" alt="Hack-Warts Logo"></div>
+
+        <p class="modal-subtitle">THE SORTING BEGINS</p>
+
+        <h1>Claim your place</h1>
+
+        <p class="modal-description">
+            Registration for the House Cup opens soon.
+            Leave your owl address below.
+        </p>
+
+        <form id="registrationForm">
+
+            <label for="owlEmail">Owl address</label>
+
+            <input
+                type="email"
+                id="owlEmail"
+                placeholder="wizard@hogwarts.edu"
+                required
+            >
+
+            <button type="submit" class="waiting-btn">
+                Join the waiting list
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<script>
+function openRegistration() {
+    document.getElementById("registrationPopup").style.display = "flex";
+}
+
+function closeRegistration() {
+    document.getElementById("registrationPopup").style.display = "none";
+}
+
+// Close when clicking outside the popup
+document.getElementById("registrationPopup").addEventListener("click", function(event) {
+    if (event.target === this) {
+        closeRegistration();
+    }
+});
+
+// Handle form submission
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("owlEmail").value;
+
+    alert("Your owl address has been received: " + email);
+
+    closeRegistration();
+});
+</script>
 </body>
 </html>
