@@ -35,7 +35,7 @@ body {
     left: 13%;
     top: 3%;
     margin: 0;
-    font-size: 4.45cqw; 
+    font-size: 4.45cqw;  
     font-weight: 400;
     line-height: 1.5;
     color: #561111;
@@ -51,16 +51,75 @@ body {
     object-fit: fill;
 }
 
-.crest {
+.house {
     position: absolute;
     width: 23%;
-    height: auto;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.35s ease;
 }
 
-.hufflepuff { left: 1%;    top: 15.5%; }
-.slytherin  { left: 23.8%; top: 28.5%; }
-.ravenclaw  { left: 2.7%;  top: 50%; }
-.gryffindor { left: 25.2%; top: 60%; }
+.crest {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: filter 0.35s ease;
+}
+
+.house-name {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: -1cqw; 
+    text-align: center;
+    font-size: 2.2cqw;
+    line-height: 1.2;
+    color: #561111;
+    opacity: 0;
+    transform: translateY(-0.6cqw);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+}
+
+.house:hover,
+.house:focus-visible {
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.house:hover .crest,
+.house:focus-visible .crest {
+    filter: drop-shadow(0 0.8cqw 1cqw rgba(86, 17, 17, 0.35));
+}
+
+.house:hover .house-name,
+.house:focus-visible .house-name {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .house, .crest, .house-name { transition: none; }
+}
+
+.hufflepuff { 
+    left: 3%;    
+    top: 15.5%; 
+}
+.slytherin  { 
+    left: 25.2%; 
+    top: 26.5%; 
+}
+.ravenclaw  { 
+    left: 3%;  
+    top: 51.5%; 
+}
+.griffindor { 
+    left: 25.2%; 
+    top: 62.5%;
+}
 
 .letter {
     position: absolute;
