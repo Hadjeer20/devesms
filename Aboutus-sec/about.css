@@ -5,7 +5,7 @@ body{
     font-family: serif;
 }
 .about{
-    padding: 60px 80px;
+    padding: 60px  80px;
     border-bottom:1px solid#b9a98a ;
 }
 .about-heading{
@@ -17,7 +17,7 @@ body{
 .about-heading .wand{ height: 100px;}
 .about-title{
      font-family: 'Henny Penny', cursive;
-    font-size: 56px;
+    font-size:56px;
     color: #000000;
     margin: 0;
     line-height: 1;
@@ -45,6 +45,7 @@ height: auto;
    font-family: 'Instrument Serif', serif;
     font-size: 24px;
     line-height: 1.6;
+    
 }
 .about-image{
     flex: 0 0 auto;
@@ -53,4 +54,34 @@ height: auto;
   width: 260px;
   max-width: 100%;
   height: auto;
+}
+@media (max-width: 768px) {
+
+  .about {
+    padding: 40px 20px;
+  }
+
+  .about-heading .wand { height: 60px; }
+  .about-title { font-size: 36px; }
+
+  .about-content {
+    
+    flex-direction: column;   
+    gap: 30px;
+    align-items: flex-start;
+   
+  }
+
+  .about-text {
+    flex: 1 1 auto ;
+       font-size: 18px;       
+  }
+
+ 
+  .about-image {
+    align-self: center;
+  }
+  .about-image img {
+   width: 180px;
+  }
 }
