@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack-Warts | Agenda</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Instrument+Serif&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="agenda.css">
+</head>
+<body>
+    <section class="agenda">
+        <div class="stage">
+
+            <img src="assets/wound.png" class="wand" alt="">
+            <h2 class="title">Agenda</h2>
+            <img src="assets/title underline.png" class="title-underline" alt="">
+            <img src="assets/books.png" class="books" alt="">
+            <img src="assets/witch_hat_transparent 1.png" class="hat" alt="">
+
+            <h3 class="day">Day 1</h3>
+
+            <div class="slots" role="tablist" aria-label="Day 1 schedule">
+                <button class="slot is-active" role="tab" aria-selected="true"
+                        data-time="09:00" data-title="Opening Ceremony"
+                        data-desc="The Great Hall welcomes every house and reveals the first challenge.">
+                    <span class="slot-time">09:00</span>
+                    <span class="slot-title">Opening Ceremony</span>
+                </button>
+                <button class="slot" role="tab" aria-selected="false"
+                        data-time="10:30" data-title="The Challenge Begins"
+                        data-desc="Teams gather, choose their tools, and start building their solution.">
+                    <span class="slot-time">10:30</span>
+                    <span class="slot-title">The Challenge Begins</span>
+                </button>
+                <button class="slot" role="tab" aria-selected="false"
+                        data-time="17:00" data-title="First Spell Check"
+                        data-desc="Mentors visit each table for a progress review and a little guidance.">
+                    <span class="slot-time">17:00</span>
+                    <span class="slot-title">First Spell Check</span>
+                </button>
+            </div>
+
+            <div class="detail" aria-live="polite">
+                <div class="detail-content">
+                    <img src="assets/dev sign.png" class="detail-icon" alt="">
+                    <p class="detail-time">09:00</p>
+                    <h4 class="detail-title">Opening Ceremony</h4>
+                    <p class="detail-desc">The Great Hall welcomes every house and reveals the first challenge.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="agenda.js"></script>
+</body>
+</html>

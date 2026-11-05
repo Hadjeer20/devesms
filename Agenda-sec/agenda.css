@@ -1,0 +1,220 @@
+:root {
+    --bg: #F4E9C9;
+    --slot-bg: #F8EFD3;
+    --slot-border: #DCCBA6;
+    --wine: #761111;
+    --wine-dark: #561111;
+    --gold: #F5C842;
+    --oval-bg: #F5E6BF;
+    --oval-border: #CDB68F;
+
+    --font-title: "Henny Penny", cursive;
+    --font-text: "Instrument Serif", Georgia, serif;
+    --font-time: "Outfit", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+}
+
+.agenda {
+    container-type: inline-size;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    aspect-ratio: 1402 / 888;
+}
+
+.stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.wand {
+    position: absolute;
+    left: 4.6%;
+    top: 2%;
+    width: 10%;
+    height: auto;
+}
+
+.title {
+    position: absolute;
+    left: 13%;
+    top: 3%;
+    margin: 0;
+    font-family: var(--font-title);
+    font-size: 4.45cqw;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #561111;
+}
+
+.title-underline {
+    position: absolute;
+    left: 10.4%;
+    top: 9.6%;
+    width: 20%;
+    height: 7.8%;
+    object-fit: fill;
+}
+
+.books {
+    position: absolute;
+    left: 76%;
+    top: 3.4%;
+    width: 14%;
+    height: auto;
+}
+
+.hat {
+    position: absolute;
+    left: 20%;
+    top: 70%;
+    width: 14%;
+    height: auto;
+}
+
+.day {
+    position: absolute;
+    left: 9%;
+    top: 35%;
+    margin: 0;
+    font-family: var(--font-title);
+    font-size: 2cqw;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #1d0b0b;
+}
+
+.slots {
+    position: absolute;
+    left: 18%;
+    top: 35%;
+    width: 36cqw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.07cqw;
+}
+
+.slot {
+    display: grid;
+    grid-template-columns: 6.3cqw 1fr;
+    align-items: center;
+    width: 100%;
+    height: 4.85cqw;
+    padding: 0 1.5cqw;
+    font: inherit;
+    text-align: left;
+    color: var(--wine-dark);
+    background: var(--slot-bg);
+    border: 1px solid var(--slot-border);
+    border-radius: 0.6cqw;
+    cursor: pointer;
+    transition: transform 0.25s ease, background-color 0.25s ease,
+                color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.slot-time {
+    font-family: var(--font-time);
+    font-size: 1.07cqw;
+    font-weight: 500;
+    color: var(--wine);
+    align-self: start;
+    margin-top: 1.6cqw;
+    transition: color 0.25s ease;
+}
+
+.slot-title {
+    font-family: var(--font-text);
+    font-size: 1.62cqw;
+    line-height: 1.1;
+}
+
+.slot:hover,
+.slot:focus-visible {
+    transform: translateX(0.5cqw);
+    border-color: var(--wine);
+    box-shadow: 0 0.4cqw 1cqw rgba(86, 17, 17, 0.15);
+    outline: none;
+}
+
+.slot.is-active {
+    transform: translateX(0.5cqw);
+    background: var(--wine);
+    border-color: var(--wine);
+    color: #fff;
+}
+
+.slot.is-active .slot-time { color: var(--gold); }
+
+
+.detail {
+    position: absolute;
+    left: 58%;
+    top: 26%;
+    width: 32%;
+    min-height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3cqw 2cqw;
+    background: var(--oval-bg);
+    border: 1px solid var(--oval-border);
+    border-radius: 50%;
+    text-align: center;
+    color: var(--wine-dark);
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.detail-content.is-swapping {
+    opacity: 0;
+    transform: translateY(0.8cqw);
+}
+
+.detail-icon {
+    width: 50%;
+    height: auto;
+    margin-bottom: 10%;
+}
+
+.detail-time {
+    margin: 0 0 0.5cqw;
+    font-family: var(--font-time);
+    font-size: 1.07cqw;
+    font-weight: 500;
+    color: var(--wine);
+}
+
+.detail-title {
+    margin: 0 0 1.2cqw;
+    font-family: var(--font-title);
+    font-size: 2.15cqw;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--wine-dark);
+}
+
+.detail-desc {
+    margin: 0;
+    max-width: 21cqw;
+    font-family: var(--font-text);
+    font-size: 1.3cqw;
+    line-height: 1.3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slot, .slot-time, .detail-content { transition: none; }
+}
