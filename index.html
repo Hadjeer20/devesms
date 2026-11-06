@@ -8,44 +8,73 @@
     <title>Hack-Warts</title>
 
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        width: 100%;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .header-frame {
-        display: block;
-        width: 100%;
-        height: 100vh;
-        border: none;
-    }
-     .section-frame {
-        display: block;
-        width: 100%;
-        height: 100vh;
-        border: none;
-    }
-      
-</style>
+        body {
+            width: 100%;
+            background: #F4E9C9;
+        }
 
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100vh;
+            border: none;
+            overflow: hidden;
+        }
+
+        iframe + iframe:not(#footer, #header, #about) {
+            box-sizing: content-box;  
+            border-top: 2px solid #B9A98A;
+        }
+        iframe + iframe {
+            margin-top: 40px;
+        }
+    </style>
 </head>
 
 <body>
 
-    
-<iframe id="header" src="Header/Home.html" class="header-frame"></iframe>
+    <iframe id="header" src="Header/Home.html" scrolling="no"></iframe>
+    <iframe id="about" src="Aboutus-sec/About.html" scrolling="no"></iframe>
+    <iframe id="teams" src="Teamandschool-sec/Teams.html" scrolling="no"></iframe>
+    <iframe id="agenda" src="Agenda-sec/Agenda.html" scrolling="no"></iframe>
+    <iframe id="footer" src="Footer/Contact.html" scrolling="no"></iframe>
 
-<iframe id="about" src="Aboutus-sec/About.html" class="section-frame"></iframe>
+    <script>
+        const frames = document.querySelectorAll('iframe');
+        let keepAligned = true;
+        let timer;
 
-<iframe id="teams" src="Teamandschool-sec/Teams.html" class="section-frame"></iframe>
+        window.addEventListener('message', (e) => {
+            if (!e.data || e.data.type !== 'iframe-height') return;
 
-<iframe id="agenda" src="Agenda-sec/Agenda.html" class="section-frame"></iframe>
+            frames.forEach((f) => {
+                if (f.contentWindow === e.source) f.style.height = e.data.height + 'px';
+            });
 
-<iframe id="footer" src="Footer/Contact.html" class="section-frame"></iframe>
+            if (keepAligned && location.hash) {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    const target = document.querySelector(location.hash);
+                    if (target) target.scrollIntoView({ behavior: 'instant' });
+                }, 120);
+            }
+        });
+
+        ['wheel', 'touchstart', 'keydown'].forEach((evt) =>
+            window.addEventListener(evt, () => (keepAligned = false), { once: true, passive: true })
+        );
+        setTimeout(() => (keepAligned = false), 2500);
+    </script>
 </body>
-</html>   
+
+</html>
