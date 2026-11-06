@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +22,10 @@
             </div>
 
             <nav class="nav-links">
-                <a href="home.html">Home</a>
-                <a href="../Aboutus-sec/About.html">About</a>
-                <a href="../Teamandschool-sec/Teams.html">Teams & Schools</a>
-                <a href="../Contact-sec/Contact.html">Contact</a>
+                <a href="../index.html#header" target="_top">Home</a>
+                <a href="../index.html#about" target="_top">About</a>
+                <a href="../index.html#teams" target="_top">Teams & Schools</a>
+                <a href="../index.html#footer" target="_top">Contact</a>
             </nav>
 
             <div class="register_button">
@@ -94,14 +93,12 @@ function closeRegistration() {
     document.getElementById("registrationPopup").style.display = "none";
 }
 
-// Close when clicking outside the popup
 document.getElementById("registrationPopup").addEventListener("click", function(event) {
     if (event.target === this) {
         closeRegistration();
     }
 });
 
-// Handle form submission
 document.getElementById("registrationForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -112,5 +109,6 @@ document.getElementById("registrationForm").addEventListener("submit", function(
     closeRegistration();
 });
 </script>
+    <script src="../resize.js"></script>
 </body>
 </html>

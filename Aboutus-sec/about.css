@@ -1,87 +1,128 @@
-body{
+/* About — sized in cqw (1cqw = 1% of the section width, like the Teams
+   and Agenda sections) so it scales with the screen. Minimums keep text
+   readable on small screens. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
     margin: 0;
-    background: #f4e9c9;
-    color:#561111;
+    background: #F4E9C9;
+    color: #561111;
     font-family: serif;
 }
-.about{
-    padding: 60px  80px;
-    border-bottom:1px solid#b9a98a ;
+
+.about {
+    container-type: inline-size;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    border-bottom: 1px solid #B9A98A;
 }
-.about-heading{
+
+.about-inner {
+    padding: 4.2cqw 5.5cqw 5cqw;
+}
+
+/* ---------- Heading ---------- */
+.about-heading {
     display: flex;
     align-items: flex-end;
-    gap: 3px;
-    margin-bottom: 40px;
+    gap: 0.4cqw;
+    margin-bottom: 3.6cqw;
 }
-.about-heading .wand{ height: 100px;}
-.about-title{
-     font-family: 'Henny Penny', cursive;
-    font-size:56px;
-    color: #000000;
-    margin: 0;
-    line-height: 1;
-    
-}
-.title-wrap{
-    position: relative;
-    display: inline-block;}
-.underline{
-    position: absolute;
-    left: -30px;
-    bottom: -18px;
-width: 140%;
-height: auto;
 
+.wand {
+    height: max(6.9cqw, 60px);
+    width: auto;
 }
-.about-content{
+
+.title-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.about-title {
+    margin: 0;
+    font-family: "Henny Penny", cursive;
+    font-size: max(4.45cqw, 34px);
+    font-weight: 400;
+    line-height: 1;
+    color: #561111;
+}
+
+.underline {
+    position: absolute;
+    left: -2cqw;
+    bottom: -1.3cqw;
+    width: 140%;
+    height: auto;
+    pointer-events: none;
+}
+
+/* ---------- Content ---------- */
+.about-content {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 120px;
+    gap: 8.3cqw;
 }
-.about-text{
-    flex: 0 1 700px;
-   font-family: 'Instrument Serif', serif;
-    font-size: 24px;
+
+.about-text {
+    flex: 0 1 48.6cqw;
+    font-family: "Instrument Serif", serif;
+    font-size: max(1.67cqw, 16px);
     line-height: 1.6;
-    
 }
-.about-image{
+
+.about-text p {
+    margin: 0 0 1.2em;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-slogan {
+    font-size: 1.1em;
+}
+
+.about-image {
     flex: 0 0 auto;
 }
-.about-image img{
-  width: 260px;
-  max-width: 100%;
-  height: auto;
+
+.about-image img {
+    display: block;
+    width: 18cqw;
+    max-width: 100%;
+    height: auto;
 }
+
+/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
+    .about-inner {
+        padding: 40px 20px;
+    }
 
-  .about {
-    padding: 40px 20px;
-  }
+    .about-heading {
+        margin-bottom: 30px;
+    }
 
-  .about-heading .wand { height: 60px; }
-  .about-title { font-size: 36px; }
+    .about-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
 
-  .about-content {
-    
-    flex-direction: column;   
-    gap: 30px;
-    align-items: flex-start;
-   
-  }
+    .about-text {
+        flex: 1 1 auto;
+        font-size: 18px;
+    }
 
-  .about-text {
-    flex: 1 1 auto ;
-       font-size: 18px;       
-  }
+    .about-image {
+        align-self: center;
+    }
 
- 
-  .about-image {
-    align-self: center;
-  }
-  .about-image img {
-   width: 180px;
-  }
+    .about-image img {
+        width: 180px;
+    }
 }
